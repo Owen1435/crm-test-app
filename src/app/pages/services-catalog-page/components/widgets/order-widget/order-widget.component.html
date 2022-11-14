@@ -1,0 +1,19 @@
+<app-widget [title]="'виджет'">
+  <div class="content">
+    <div class="executor-name" *ngIf="executor && executor.name">
+      Заправщик {{executor.name}}
+    </div>
+    <div class="deliver-time" *ngIf="deliveringTime">
+      {{deliveringTime}}
+    </div>
+    <div class="map-wrapper">
+      <div class="delivery-status" *ngIf="orderStatus">
+        <app-order-status [status]="orderStatus"></app-order-status>
+      </div>
+      <app-map [width]="200" [height]="150"></app-map>
+    </div>
+    <div class="executor-phone" *ngIf="executor && executor.phone">
+      {{executor.phone}}
+    </div>
+  </div>
+</app-widget>

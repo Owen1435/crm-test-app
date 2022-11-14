@@ -1,0 +1,43 @@
+.content {
+  .executor-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #686868;
+  }
+
+  .deliver-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .executor-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid #686868;
+    color: #686868;
+  }
+
+  .map-wrapper {
+    margin-top: 5px;
+    position: relative;
+
+    .delivery-status {
+      position: absolute;
+      top: -10px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}

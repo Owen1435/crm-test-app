@@ -1,0 +1,21 @@
+.add-parameters-modal {
+  min-width: 300px;
+
+  .parameter-item {
+    padding: 10px 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .parameter-item:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .add-btn {
+    margin-top: 10px;
+    width: 100%;
+  }
+}

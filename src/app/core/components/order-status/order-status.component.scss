@@ -1,0 +1,25 @@
+.status {
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 15px;
+
+  &.SELECTION {
+    background-color: #dfdfdf;
+    color: #1e1e1e;
+  }
+
+  &.DELIVERY {
+    background-color: #35abff;
+    color: white;
+  }
+
+  &.REFILL {
+    background-color: #ffb019;
+    color: white;
+  }
+
+  &.COMPLETED {
+    background-color: #1cd526;
+    color: white;
+  }
+}

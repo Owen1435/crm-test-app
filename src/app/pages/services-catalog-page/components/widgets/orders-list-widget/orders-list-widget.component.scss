@@ -1,0 +1,21 @@
+.content {
+  width: 450px;
+
+  .title {
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 6px;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+::ng-deep {
+  .mat-table {
+    tr.mat-header-row {
+      height: unset;
+    }
+  }
+}

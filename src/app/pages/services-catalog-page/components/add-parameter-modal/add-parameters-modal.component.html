@@ -1,0 +1,22 @@
+<div class="add-parameters-modal">
+  <h2>
+    Добавить параметр
+  </h2>
+  <div class="parameters-list">
+    <div *ngIf="!(parameters$ | async).length">
+      Нет доступных параметров
+    </div>
+    <div class="parameter-item"
+         *ngFor="let parameter of (parameters$ | async)"
+         (click)="saveChanges(parameter)"
+    >
+      <div class="title">{{parameter.title}}</div>
+    </div>
+  </div>
+  <button mat-raised-button
+          class="add-btn"
+          color="primary"
+  >
+    Добавить
+  </button>
+</div>

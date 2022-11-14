@@ -1,0 +1,48 @@
+.services-catalog-page {
+  height: 100vh;
+  padding-top: 50px;
+  display: flex;
+
+  .page-content-wrapper {
+    flex-grow: 1;
+
+    .content {
+      height: 100%;
+      overflow: auto;
+      padding: 10px;
+
+      h1 {
+        text-transform: capitalize;
+        font-size: 2rem;
+      }
+
+      .parameters-wrapper {
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .parameters-title {
+          font-size: 22px;
+        }
+
+        .parameters-id {
+          display: flex;
+          align-items: center;
+
+          .parameters-id-description {
+            font-size: 14px;
+            color: #727272;
+          }
+
+          .parameters-id-input {
+            margin-left: 10px;
+            padding: 3px 10px;
+            background-color: #eaeaea;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}

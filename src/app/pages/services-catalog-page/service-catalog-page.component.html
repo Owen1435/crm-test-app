@@ -1,0 +1,57 @@
+<div class="services-catalog-page">
+  <app-sidebar>
+    <app-services-list
+      [services]="services"
+      [selectedService]="selectedService"
+    >
+    </app-services-list>
+  </app-sidebar>
+
+  <div class="page-content-wrapper">
+    <div class="content" *ngIf="selectedService">
+      <h1>{{selectedService?.title}} ({{selectedService?.type}}) </h1>
+      <div class="parameters-wrapper">
+        <h2 class="parameters-title">Параметры</h2>
+        <div class="parameters-id">
+          <div class="parameters-id-description">Идентификатор/префикс группы параметров</div>
+          <div class="parameters-id-input">{{selectedService?.prefix}}</div>
+        </div>
+      </div>
+      <app-parameters-list
+        [parameters]="clientParameters"
+        [title]="'Параметры'"
+        [category]="parameterCategoryEnum.CLIENT"
+        (addParameterEvent)="addParameters($event)"
+        (loadParameterEvent)="loadParameter()"
+        (linkParameterEvent)="linkParameter()"
+        (deleteParameterEvent)="deleteParameter($event)"
+        (editParameterEvent)="editParameter($event)"
+      >
+      </app-parameters-list>
+      <app-parameters-list
+        [parameters]="providerParameters"
+        [title]="'Параметры поставщика'"
+        [category]="parameterCategoryEnum.PROVIDER"
+        (addParameterEvent)="addParameters($event)"
+        (loadParameterEvent)="loadParameter()"
+        (linkParameterEvent)="linkParameter()"
+        (deleteParameterEvent)="deleteParameter($event)"
+        (editParameterEvent)="editParameter($event)"
+      >
+      </app-parameters-list>
+      <app-parameters-list
+        [parameters]="otherParameters"
+        [title]="'Другие параметры'"
+        [category]="parameterCategoryEnum.OTHER"
+        (addParameterEvent)="addParameters($event)"
+        (loadParameterEvent)="loadParameter()"
+        (linkParameterEvent)="linkParameter()"
+        (deleteParameterEvent)="deleteParameter($event)"
+        (editParameterEvent)="editParameter($event)"
+      >
+      </app-parameters-list>
+    </div>
+  </div>
+
+  <app-widgets-preview *ngIf="selectedService" [parameters]="selectedService?.parameters"></app-widgets-preview>
+</div>

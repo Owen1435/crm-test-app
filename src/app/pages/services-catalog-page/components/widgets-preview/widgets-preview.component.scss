@@ -1,0 +1,17 @@
+.widgets-preview-wrapper {
+  height: 100%;
+  width: 600px;
+  background-color: #e3e3e3;
+  box-shadow: inset 3px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  overflow: auto;
+
+  .widgets-preview-content {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      margin: 10px 20px;
+    }
+  }
+}

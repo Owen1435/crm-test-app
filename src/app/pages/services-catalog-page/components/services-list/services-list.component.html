@@ -1,0 +1,29 @@
+<div class="services-list">
+  <div class="search-wrapper">
+    <mat-form-field class="search-input-field" appearance="outline">
+      <mat-icon matPrefix>search</mat-icon>
+      <mat-label>поиск</mat-label>
+      <input matInput type="search" (input)="onSearch($event)">
+    </mat-form-field>
+  </div>
+
+  <div class="services-list-wrapper">
+    <div class="title">Услуги:</div>
+    <app-service-item *ngFor="let service of services"
+                      [service]="service"
+                      [selected]="selectedService?.id === service.id"
+                      (selectServiceEvent)="selectService($event)"
+                      (editServiceEvent)="openEditServiceModal($event)"
+    ></app-service-item>
+  </div>
+
+  <div class="add-service-btn-wrapper">
+    <button mat-raised-button
+            class="add-service-btn"
+            color="primary"
+            (click)="openAddServiceModal()"
+    >
+      Добавить
+    </button>
+  </div>
+</div>

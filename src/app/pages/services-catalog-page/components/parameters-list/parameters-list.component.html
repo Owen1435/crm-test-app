@@ -1,0 +1,30 @@
+<div class="parameters-list">
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <span class="title">{{ title }}</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="list">
+
+        <div class="options-btns" *ngIf="showOptions">
+          <button mat-stroked-button class="option-btn" (click)="addParameter()">Добавить параметр</button>
+          <button mat-stroked-button class="option-btn" (click)="loadParameter()">Загрузить параметры</button>
+          <button mat-stroked-button class="option-btn" (click)="linkParameter()">Подключить параметры</button>
+        </div>
+
+        <app-parameter-item
+          *ngFor="let parameter of parameters"
+          [parameter]="parameter"
+          (deleteParameterEvent)="deleteParameter($event)"
+          (editParameterEvent)="editParameter($event)"
+        >
+        </app-parameter-item>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

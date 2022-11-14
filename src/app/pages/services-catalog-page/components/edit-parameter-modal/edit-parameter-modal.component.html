@@ -1,0 +1,26 @@
+<div class="edit-parameter-modal" *ngIf="parameter">
+  <h2 class="title">
+    Изменить параметр (key: {{parameter.key}})
+  </h2>
+  <form [formGroup]="form" (ngSubmit)="saveChanges()">
+    <mat-form-field class="full-with" appearance="outline">
+      <mat-label>Название</mat-label>
+      <input matInput type="text" [formControlName]="'title'">
+    </mat-form-field>
+    <mat-form-field class="full-with" appearance="outline">
+      <mat-label>Значение (JSON)</mat-label>
+      <input matInput type="text" [formControlName]="'value'">
+    </mat-form-field>
+    <mat-form-field class="full-with" appearance="outline">
+      <mat-label>Описание</mat-label>
+      <input matInput type="text" [formControlName]="'description'">
+    </mat-form-field>
+    <button mat-raised-button class="full-with"
+            type="submit"
+            color="primary"
+            [disabled]="form.invalid"
+    >
+      Сохранить
+    </button>
+  </form>
+</div>

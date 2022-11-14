@@ -1,0 +1,22 @@
+<div class="parameter-item" *ngIf="parameter">
+  <div>
+    <div class="title">{{parameter.title}}</div>
+    <div class="description">{{parameter.description}}</div>
+  </div>
+  <div class="options">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+</div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="editParameter()">
+    <mat-icon>edit</mat-icon>
+    <span>изменить</span>
+  </button>
+  <button mat-menu-item (click)="deleteParameter()">
+    <mat-icon>delete</mat-icon>
+    <span>удалить</span>
+  </button>
+</mat-menu>

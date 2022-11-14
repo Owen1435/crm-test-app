@@ -1,0 +1,32 @@
+<div class="widgets-preview-wrapper">
+  <h2 class="title">Предпросмотр</h2>
+  <div class="widgets-preview-content">
+    <div>
+      <app-order-widget
+        [executor]="executor"
+        [deliveringTime]="deliveringTime"
+        [orderStatus]="orderStatus"
+      >
+      </app-order-widget>
+    </div>
+    <div>
+      <app-orders-list-widget
+        [cost]="cost"
+        [deliveringTime]="deliveringTime"
+        [orderStatus]="orderStatus"
+      >
+      </app-orders-list-widget>
+    </div>
+    <div>
+      <app-service-screen-widget
+        [executor]="executor"
+        [cost]="cost"
+        [volume]="volume"
+        [deliveringTime]="deliveringTime"
+        [orderStatus]="orderStatus"
+        [fuel]="fuel"
+      >
+      </app-service-screen-widget>
+    </div>
+  </div>
+</div>

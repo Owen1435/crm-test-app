@@ -1,0 +1,15 @@
+.widget-wrapper {
+  .widget-title {
+    font-size: 14px;
+    color: #727272;
+    padding-left: 10px;
+    margin-bottom: 3px;
+  }
+
+  .widget-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  }
+}

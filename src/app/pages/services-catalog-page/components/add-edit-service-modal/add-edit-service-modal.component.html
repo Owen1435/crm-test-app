@@ -1,0 +1,27 @@
+<div class="add-edit-service-modal">
+  <h2 class="title" *ngIf="mode==='edit'; else createService">
+    Изменить услугу
+  </h2>
+  <ng-template #createService>
+    <h2 class="title">
+      Добавить услугу
+    </h2>
+  </ng-template>
+  <form (ngSubmit)="saveChanges()">
+    <div>
+      <mat-form-field class="full-with" appearance="outline">
+        <mat-label>Название услуги</mat-label>
+        <input matInput type="text" [formControl]="serviceName">
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button class="full-with"
+              type="submit"
+              color="primary"
+              [disabled]="serviceName.invalid"
+      >
+        Сохранить
+      </button>
+    </div>
+  </form>
+</div>

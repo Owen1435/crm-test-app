@@ -1,0 +1,15 @@
+.service-item {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #ededed;
+  }
+
+  &.selected {
+    background-color: #ededed;
+  }
+}

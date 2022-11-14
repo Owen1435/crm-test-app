@@ -1,0 +1,50 @@
+<app-widget [title]="'экран услуги'">
+  <div class="content">
+    <app-map [width]="350" [height]="250"></app-map>
+    <div class="parameter-row" *ngIf="fuel">
+      <div class="parameter-title">Тип топлива</div>
+      <div class="parameter-value">
+        <mat-button-toggle-group [value]="fuel.value">
+          <mat-button-toggle *ngFor="let fuelType of fuel.types"
+                             [value]="fuelType"
+          >
+            {{fuelType}}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+    <div class="parameter-row" *ngIf="volume">
+      <div class="parameter-title">Обьём</div>
+      <div class="parameter-value">
+        {{volume.value}}
+        <mat-slider color="primary"
+                    [min]="volume.min || 1"
+                    [max]="volume.max || 100"
+                    [value]="volume.value"
+                    disabled
+        >
+        </mat-slider>
+      </div>
+    </div>
+    <div class="parameter-row" *ngIf="deliveringTime">
+      <div class="parameter-title">Время ожидания</div>
+      <div class="parameter-value">{{deliveringTime}}</div>
+    </div>
+    <div class="parameter-row" *ngIf="cost">
+      <div class="parameter-title">Стоимость</div>
+      <div class="parameter-value">{{cost}}</div>
+    </div>
+    <div class="parameter-row" *ngIf="orderStatus">
+      <div class="parameter-title">Статус</div>
+      <div class="parameter-value">
+        <app-order-status [status]="orderStatus"></app-order-status>
+      </div>
+    </div>
+    <div class="info-block" *ngIf="executor">
+      К вам приедет заправщик {{executor.name}} тел. {{executor.phone}}
+    </div>
+    <div class="btn">
+      <button mat-raised-button class="add-service-btn" color="primary">Заказать</button>
+    </div>
+  </div>
+</app-widget>
